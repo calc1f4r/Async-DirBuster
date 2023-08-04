@@ -1,39 +1,73 @@
-# Description 
-![image](../../Attackments/Directorybruteforce.png)
-dirBruterforcer is a multithreaded url bruteforce which supports various features like mentioned below!
-```
-usage: dirBruterforcer.py [-h] [-x [EXTENSIONS ...]] [-r] [-H [HEADER ...]] [-a string] [-t THREADS] [-ht] [-mc [MATCH_CODES ...]] [-ms [MATCH_SIZE ...]] [-fc [FILTER_CODES ...]]
-                          [-fs [FILTER_SIZE ...]] -w WORDLIST [-o OUTPUT]
-                          target
+### 🔥 Asynchronous Directory Buster
 
-positional arguments:
-  target                The target to attack on provide it with http or https
+#### ⚡ Description
 
-options:
-  -h, --help            show this help message and exit
-  -x [EXTENSIONS ...]   Extension list separated by space and without dot (Example: php asp)
-  -r, --follow-redirect
-                        Follow redirects
-  -H [HEADER ...], --headers [HEADER ...]
-                        Specify HTTP headers, -H 'Header1: val1' -H 'Header2: val2'
-  -a string, --useragent string
-                        Set the User-Agent string (default 'directorybuster/1.0')
-  -t THREADS, --threads THREADS
-                        Number of threads
-  -ht, --hide-title     Specify for hiding response title in output
-  -mc [MATCH_CODES ...]
-                        Include status codes, separated by space, example -mc 200 404
-  -ms [MATCH_SIZE ...]  Match amount of size in response
-  -fc [FILTER_CODES ...]
-                        Filter the status codes (provide space separated values
-  -fs [FILTER_SIZE ...]
-                        Filter the response size (provide space separated values
-  -w WORDLIST, --wordlist WORDLIST
-                        Wordlist to use
-  -o OUTPUT, --output OUTPUT
-                        Output file to use!
+Asynchronous Directory Buster is a Python script that allows you to efficiently perform directory and file brute-forcing on a target website. The script leverages the power of asynchronous programming with aiohttp to perform multiple HTTP requests simultaneously, making the process faster and more efficient.
+
+##### 💣 Key Features
+
+- Asynchronous HTTP requests for improved speed.
+- Customizable User-Agent and HTTP headers.
+- Ability to follow redirects.
+- Filter and match HTTP status codes.
+- Filter and match response sizes.
+- Output results to a file.
+- Custom wordlist support.
+
+##### 🧾 Requirements
+
+```python
+pip install aiohttp beautifulsoup4 termcolor
 ```
-# Learning 
-- How to use beautiful soup to parse some of the data ! 
-# Resources Used 
-- Beautiful soup official documentation | [Link](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+##### Usage
+
+**📌 Basic one**
+
+```python
+python directory_buster.py -u <target_url> -w <path_to_wordlist>
+```
+
+**📌 Other examples**
+
+_Custom Header_
+
+```python
+python directory_buster.py -u https://example.com -w wordlist.txt -H 'Authorization: Bearer token'
+```
+
+_Extensions_
+
+```python
+python directory_buster.py -u https://example.com -w wordlist.txt -x php asp
+```
+
+_Saving results to the file_
+
+```python
+python directory_buster.py -u https://example.com -w wordlist.txt -o output.txt
+```
+
+##### Supported flags
+
+- -x <extensions>: Specify a list of file extensions to append to the directories in the wordlist (e.g., -x php asp).
+- -r: Follow redirects. If this flag is set, the script will follow HTTP redirects (3xx status codes).
+- -H <headers>: Specify custom HTTP headers in the format 'Header1: value1' 'Header2: value2'.
+- -a <user_agent>: Set a custom User-Agent string. The default is directorybuster/1.0.
+- -ht: Hide response title in output.
+- -m c <status_codes>: Include status codes to match, separated by space (e.g., -m c 200 404).
+- -ms <response_sizes>: Match response sizes, separated by space.
+- -fc <status_codes>: Filter status codes, separated by space (default is filtering 404).
+- -fs <response_sizes>: Filter response sizes, separated by space.
+- -o <output_file>: Path to the output file to save the results
+
+##### 🔴 Note
+
+- Matching and Filtering Response Length together is not available at the moment. Choose one of them in the command-line arguments.
+- Matching and Filtering Response Status Code together is not available at the moment. Choose one of them in the command-line arguments.
+
+#### Contributions
+
+Contributions are welcome! If you find a bug or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+Happy directory busting🔥!
