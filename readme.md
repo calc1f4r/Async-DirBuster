@@ -1,10 +1,11 @@
 ### 🔥 Asynchronous Directory Buster
 
+
+#### ⚡ Description
+Asynchronous Directory Buster is a Python script that allows you to efficiently perform directory and file brute-forcing on a target website. The script leverages the power of asynchronous programming with aiohttp to perform multiple HTTP requests simultaneously, making the process faster and more efficient.
+
 https://github.com/calc1f4r/Async-DirBuster/assets/74751675/f303d142-97ce-4547-836f-56dda47879e6
 
-
-Asynchronous Directory Buster is a Python script that allows you to efficiently perform directory and file brute-forcing on a target website. The script leverages the power of asynchronous programming with aiohttp to perform multiple HTTP requests simultaneously, making the process faster and more efficient.
-#### ⚡ Description
 
 ##### 💣 Key Features
 
