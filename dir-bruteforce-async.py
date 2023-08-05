@@ -201,7 +201,6 @@ class Dir_bruteforcer():
     async def print_and_save_output(self, status_code, response_length, url, title):
         status_code = int(status_code)
         color = 'grey'
-        color = "green"
         if status_code >= 200 and status_code < 300:
             color = 'green'
         elif status_code >= 300 and status_code < 400:
